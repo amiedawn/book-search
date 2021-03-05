@@ -31,6 +31,15 @@ const typeDefs = gql`
     link: String
   }
 
+  input bookInput {
+    bookId: String
+    authors: [String]
+    description: String
+    title: String
+    image: String
+    link: String
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -39,4 +48,4 @@ const typeDefs = gql`
 `;
 
 // export the typeDefs
-module.export = typeDefs;
+module.exports = typeDefs;
