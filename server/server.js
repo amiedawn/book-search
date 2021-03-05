@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
@@ -23,6 +24,9 @@ const server = new ApolloServer({
 // integrate our Apollo server with the Express application as middleware
 server.applyMiddleware({ app });
 
+// fix validation error in console for saved books
+app.use(bodyParser.urlencoded({ extended: true}));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -30,8 +34,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
-
-//app.use(routes);
 
 db.once('open', () => {
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
