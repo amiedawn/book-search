@@ -1,9 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
-
 
 // import typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
@@ -11,8 +9,6 @@ const db = require("./config/connection");
 
 const { authMiddleware } = require('./utils/auth');
 const path = require('path');
-
-//const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,9 +19,6 @@ const server = new ApolloServer({
 
 // integrate our Apollo server with the Express application as middleware
 server.applyMiddleware({ app });
-
-// fix validation error in console for saved books
-app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
