@@ -22,7 +22,7 @@ This application can be cloned at https://github.com/amiedawn/book-search .
 
 ## Usage Information:
 
-To view this application, simply go to http://amiedawn.github.io/react-portfolio . Here is a preview of the search screen:<br><br>![Screenshot](./client/public/search-query.png) <br><br>Here is a screenshot of a user's saved list:<br><br>![Screenshot](./client/public/saved-books.png) 
+To view this deployed application, simply go to https://immense-sierra-95993.herokuapp.com/ . Here is a preview of the search screen:<br><br>![Screenshot](./client/public/search-query.png) <br><br>Here is a screenshot of a user's saved list:<br><br>![Screenshot](./client/public/saved-books.png) 
 
 ## License:
 
